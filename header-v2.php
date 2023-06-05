@@ -8,6 +8,6 @@
     <?php wp_head(); ?>
 </head>
 <body>
-    Đây là header version 2
+   
 
     
