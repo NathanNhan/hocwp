@@ -22,10 +22,17 @@ if (have_posts()) {
            </div>
 
         <?php
+
+         
         
         //
     } // end while
+
+    
 } // end if
+
+//Đây là hàm Phân trang
+   echo paginate_links();
 
 
 
