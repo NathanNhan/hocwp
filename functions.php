@@ -1,4 +1,8 @@
 <?php 
+
+add_theme_support('post-thumbnails');
+//Định nghĩa kích thước của ảnh đại diện trong bài viết 
+add_image_size( "large_size", 800, 300, true );
 // Hàm xử lý nhúng css bootstrap
   function load_css_bootstrap () {
        wp_enqueue_style( "css_bootstrap", get_template_directory_uri() . '/css/bootstrap.min.css', array(), "1.0.3", "all" );

@@ -4,6 +4,14 @@ if (have_posts()) {
         the_post();
         //
         ?>
+           <?php if(has_post_thumbnail()) {
+              ?>
+              <div class="text-center mb-3">
+                  <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+
+              </div>
+              <?php
+           } ?>
            <h4 class="title"><?php the_title(); ?></h4>
            <?= get_the_date('d/m/Y h:i:s'); ?> 
            <p class="content"><?php the_content();  ?></p>
@@ -13,12 +21,14 @@ if (have_posts()) {
         //
     } // end while
     $tags = get_the_tags();
-    foreach($tags as $tag) {
-        ?>
-           <a class="btn btn-info " href="<?= get_tag_link($tag->term_id) ?>">
-              <?= $tag->name; ?>
-           </a> 
-        <?php
+    if($tags) {
+        foreach($tags as $tag) {
+            ?>
+               <a class="btn btn-info " href="<?= get_tag_link($tag->term_id) ?>">
+                  <?= $tag->name; ?>
+               </a> 
+            <?php
+        }
     }
 
     //Lấy tất cả các chuyên mục của bài viết 
