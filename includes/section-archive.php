@@ -31,8 +31,12 @@ if (have_posts()) {
     
 } // end if
 
-//Đây là hàm Phân trang
-   echo paginate_links();
+//Đây là hàm xử lý Phân trang
+the_posts_pagination( array( 
+  'prev_text' => 'Chương trước',
+  'next_text' => 'Chương sau',
+) );
+
 
 
 
