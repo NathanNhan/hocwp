@@ -2,6 +2,8 @@
 
 add_theme_support('post-thumbnails');
 //Định nghĩa kích thước của ảnh đại diện trong bài viết 
+//Thêm Widget vào dự án
+add_theme_support('widgets');
 add_image_size( "large_size", 800, 300, true );
 // Hàm xử lý nhúng css bootstrap
   function load_css_bootstrap () {
@@ -60,6 +62,19 @@ function prefix_bs5_dropdown_data_attribute($atts, $item, $args)
     }
     return $atts;
 }
+
+
+//Bước 1: Tạo mới 1 cái thanh widget
+function mytheme_widgets_init()
+{
+    register_sidebar(array(
+        'name' => __('nathan Widget', 'nathan'),
+        'id' => 'my-widget',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
+    ));
+}
+add_action('widgets_init', 'mytheme_widgets_init');
 
 
 ?>
