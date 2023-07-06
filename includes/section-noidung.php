@@ -12,6 +12,7 @@ echo "<div class='col col-3'>";
 echo "</div>";
 
 echo "<div class='col col-9'>";
+echo get_search_form(); 
 if (have_posts()) {
     while (have_posts()) {
         the_post();

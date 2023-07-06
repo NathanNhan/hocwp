@@ -1,5 +1,7 @@
 <?php 
-
+get_header();
+//Show khung search cho thể loại trinh thám
+get_template_part('includes/section','formsearch');
 $terms = get_terms('story');
 
 echo '<ul>';
@@ -19,3 +21,6 @@ foreach ($terms as $term) {
 }
 
 echo '</ul>';
+
+
+get_footer();
