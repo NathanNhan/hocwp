@@ -28,4 +28,33 @@ echo "</div>";
 
 echo "</div>";
 
+?>
+  <div class="row">
+      <div class="col col-6">
+          <p><?php echo get_field('trang_chu') ?></p>
+      </div>
+  
+  
+      <div class="col col-6">
+          <?php 
+          // var_dump(get_field('hinh_anh'));
+          // return false;
+          if(get_field('hinh_anh')) {
+              ?>
+                  <img src="<?php echo get_field('hinh_anh')['url'] ?>" alt="" srcset="">
+  
+              <?php
+          }
+  
+          ?>
+  
+          
+      </div>
+
+  </div>
+
+
+
+<?php
+
 
